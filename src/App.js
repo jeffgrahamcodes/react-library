@@ -8,6 +8,7 @@ import {
 import { BooksProvider } from './BooksContext';
 import Books from './components/Books';
 import Book from './components/Book';
+import NotFound from './components/NotFound';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Books />} />
           <Route path="/books" element={<Navigate to="/" />} />
           <Route path="/books/:bookID" element={<Book />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </BooksProvider>
