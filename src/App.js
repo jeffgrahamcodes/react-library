@@ -2,6 +2,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from 'react-router-dom';
 
 import { BooksProvider } from './BooksContext';
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Books />} />
+          <Route path="/books" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </BooksProvider>
