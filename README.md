@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Books App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application that displays a collection of books, allows users to view detailed information, search through the collection, and access a secret section through a private route.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The **Books App** is built with React and demonstrates how to use the Context API and React Router for state management and navigation. The application retrieves book data from a local JSON file and provides:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- A public view of books with search functionality.
+- A detailed view for individual books.
+- A protected (private) route for accessing secret content.
+- A custom 404 Not Found page for undefined routes.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Book Listing:** View all books and filter them using a search query.
+- **Book Details:** Click on a book to see its detailed information such as title, author, and description.
+- **Private Route:** Access a secret section containing exclusive books through a protected route.
+- **404 Page:** A custom Not Found page is shown for any undefined route.
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/jeffgrahamcodes/react-library.git
+   cd react-library
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies:**
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Start the development server:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The application will be available at [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+- **View Books:** Navigate to `/books` to see the complete list of books.
+- **Search Books:** Use the query parameter (e.g., `/books?search=1984`) to filter books by title.
+- **Book Details:** Click on any book to view its detailed information at `/book/:bookID`.
+- **Secret Books:** Access the secret section at `/secret-books` (protected via a private route).
+- **404 Page:** Any undefined route will display the custom 404 Not Found message.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## File Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ├── src
+    │   ├── components
+    │   │   ├── Book.js         # Component for displaying detailed book information
+    │   │   ├── Books.js        # Component for listing books with search functionality
+    │   │   ├── NotFound.js     # Component for displaying a 404 Not Found message
+    │   │   └── SecretBooks.js  # Component for displaying secret books (protected)
+    │   ├── context
+    │   │   └── BooksContext.js # Provides book data from books.json using React Context
+    │   ├── routes
+    │   │   └── PrivateRoute.js # Component for protecting private routes
+    │   ├── books.json          # Local JSON file containing book data
+    │   └── App.js              # Main application component that includes routing configuration
 
-### Code Splitting
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **React:** For building the user interface.
+- **React Router:** For managing client-side routing.
+- **Context API:** For state management across the application.
+- **JavaScript (ES6+):** Modern JavaScript for improved functionality and code clarity.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
