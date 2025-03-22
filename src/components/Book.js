@@ -6,11 +6,23 @@ import { BooksContext } from '../BooksContext';
 export default function Books() {
   const books = useContext(BooksContext);
 
-  const bookID = useParams();
+  const { bookID } = useParams();
+
+  const book = books.find((book) => book.id === parseInt(bookID));
+
+  if (books.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  if (!book) {
+    return <div>Book not found</div>;
+  }
 
   return (
     <div>
-      <h2>BOOK</h2>
+      <h1>{book.title}</h1>
+      <h2>by {book.author}</h2>
+      <p>{book.description}</p>
     </div>
   );
 }
